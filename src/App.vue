@@ -1,30 +1,47 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Navegacao :logo="logo_src" :alt="app_name" />
   <router-view/>
+  <Rodape />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Navegacao from './components/Navegacao.vue';
+import Rodape from './components/Rodape.vue';
 
-nav {
-  padding: 30px;
+export default {
+  components: {
+    Navegacao,
+    Rodape
+  },
+  data() {
+    return {
+      logo_src: "/img/logo.png",
+      app_name: "Faça seu Burger"
+    }
+  }
 }
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style scope>
+/*
+  Cor destaque: #E4700C
+  Marrom: #792F20
+*/
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  * {    
+    font-family: cursive;   
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .main-container {
+    min-height: 600px;
+    padding-top: 100px;
+  }
+
+  h1 {
+    font-size: 42px;
+    line-height: 1.4em;
+  }
 </style>
